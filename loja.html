@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenBlend | Loja de Chás</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        /* --- SEU CSS TRADICIONAL AQUI --- */
+        :root {
+            --primary: #15803d;
+            --primary-hover: #166534;
+            --bg: #f8fafc;
+            --white: #ffffff;
+            --text: #1e293b;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+        body { background-color: var(--bg); color: var(--text); }
+
+        /* Navegação */
+        nav {
+            background: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .search-container { position: relative; width: 50%; }
+        
+        .search-container input {
+            width: 100%;
+            padding: 0.6rem 1rem 0.6rem 2.5rem;
+            border-radius: 20px;
+            border: 1px solid #ddd;
+            outline: none;
+        }
+
+        .search-container i {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94a3b8;
+        }
+
+        /* Banner */
+        .hero {
+            background-color: #dcfce7;
+            padding: 4rem 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .hero-text h1 { font-size: 2.5rem; color: #144e17; margin-bottom: 5rem;  }
+        
+        .hero-img img {
+            width: 200px;
+            border-radius: 15px;
+            box-shadow: 0 20px 25px -5px rgba(12, 51, 110, 0.1);
+            border: 5px solid rgb(255, 255, 255);
+        }
+
+        /* Grade de Produtos */
+        .container { padding: 3rem 5%; }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
+
+        .card img {
+            width: 50%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+           
+            
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn-add {
+            background: #1da023;
+            color: white;
+            border: none;
+            padding: 0.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .gole {
+            font-size: large;
+
+            
+        }
+        
+       
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .hero { flex-direction: column; text-align: center; }
+            .search-container { width: 100%; order: 3; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div style="font-weight: bold; color: var(--primary); font-size: 1.5rem;">GreenBlend</div>
+        
+        <div class="search-container">
+            <i data-lucide="search"></i>
+            <input type="text" id="searchInput" onkeyup="searchProduct()" placeholder="O que você procura?">
+        </div>
+
+        <div style="display: flex; gap: 15px;">
+            <i data-lucide="shopping-cart"></i>
+            <i data-lucide="user"></i>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-text">
+            <h1><br>SEU DIA, SUA NOITE, SEU CHÁ...</h1>
+            <P class="gole">Equilíbrio em cada gole.</P>
+            <p>Sinta a energia do chá 100% orgânico da GreenBlend.</p>
+            
+        </div>
+        <div class="hero-img">
+            <img src="Fotos/TOP.jpeg" alt="Produto">
+        </div>
+        
+    </header>
+
+    <main class="container">
+        <div class="grid" id="productGrid">
+            
+            <div class="card">
+                <img src="Fotos/WhatsApp Image 2026-02-20 at 20.29.06.jpeg" alt="Hibisco">
+                <h3 class="name">Chá vital Hibisco</h3>
+                <p style="color: #64748b; font-size: 0.9rem; margin: 0.5rem 0;">Chá Funcional para Vitalidade</p>
+                <div class="price">
+                    <span>R$ 33,90</span>
+                    <button class="btn-add"><i data-lucide="plus"></i></button>
+                </div>
+
+                <div class="card">
+                <img src="Fotos/COPO.jpeg" alt="Hibisco">
+                <h3 class="name">Chá calmante</h3>
+                <p style="color: #64748b; font-size: 0.9rem; margin: 0.5rem 0;">Chá Funcional para noite e relaxamento</p>
+                <div class="price">
+                    <span>R$ 45,00</span>
+                    <button class="btn-add"><i data-lucide="plus"></i></button>
+                </div>
+
+
+
+
+
+
+
+            </div>
+
+            <div class="card">
+                <img src="Fotos/xícara (2).jpeg" alt="Matcha">
+                <h3 class="name">Kit Xícara</h3>
+                <p style="color: #64748b; font-size: 0.9rem; margin: 0.5rem 0;">Seu segundo melhor amigo</p>
+                <div class="price">
+                    <span>R$ 180,00</span>
+                    <button class="btn-add"><i data-lucide="plus"></i></button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="Fotos/foda.jpeg" alt="Matcha">
+                <h3 class="name">Sousplat para xícara</h3>
+                <p style="color: #64748b; font-size: 0.9rem; margin: 0.5rem 0;"></p>
+                <div class="price">
+                    <span>R$ 30,00</span>
+                    <button class="btn-add"><i data-lucide="plus"></i></button>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </main>
+
+    <script>
+        lucide.createIcons();
+
+        function searchProduct() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let cards = document.getElementsByClassName('card');
+            
+            for (let i = 0; i < cards.length; i++) {
+                let name = cards[i].querySelector('.name').innerText.toLowerCase();
+                if (name.includes(input)) {
+                    cards[i].style.display = "flex";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
